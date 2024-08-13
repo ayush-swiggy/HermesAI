@@ -1,5 +1,5 @@
 import React from 'react';
-import {Text, View, StyleSheet} from 'react-native';
+import {View, StyleSheet} from 'react-native';
 import InputArea from './InputArea';
 import ConversationArea from './ConversationArea';
 
@@ -14,12 +14,8 @@ const {GoogleGenerativeAI} = require('@google/generative-ai');
 const apiKey = GoogleConfigs.apiKey;
 
 function ChatScreen(props) {
-  //   console.log('In chat screen: ');
-  //   console.log(props);
-
   const [inputValue, setInputValue] = useState('');
-  //   const [chats, setChats] = useState([]);
-  //   const [allChats, setAllChats] = useState([]);
+
   const [nextId, setNextId] = useState(1);
   const [loading, setLoading] = useState(false);
 
@@ -84,7 +80,6 @@ function ChatScreen(props) {
 
   const handleAllChats = () => {
     setAllChats(prevAllChats => [...prevAllChats, ...chats]);
-    console.log(allChats);
     handleClearChats();
     console.warn('Chats Saved');
   };

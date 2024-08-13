@@ -11,7 +11,7 @@ function ClearChatButton({onPress}) {
 
 const styles = StyleSheet.create({
   buttonContainer: {
-    width: '21%',
+    width: '25%',
     height: 27,
     borderRadius: 15,
     backgroundColor: '#ff9933',

@@ -1,31 +1,3 @@
-// import React from 'react';
-// import {TouchableOpacity, Text, StyleSheet} from 'react-native';
-
-// function SaveChatButton({onPress}) {
-//   return (
-//     <TouchableOpacity style={styles.buttonContainer} onPress={onPress}>
-//       <Text style={styles.textStyle}>Save Chat</Text>
-//     </TouchableOpacity>
-//   );
-// }
-
-// const styles = StyleSheet.create({
-//   buttonContainer: {
-//     width: '25%',
-//     height: 27,
-//     borderRadius: 15,
-//     backgroundColor: '#ff9933',
-//     alignItems: 'center',
-//     justifyContent: 'center',
-//   },
-//   textStyle: {
-//     fontSize: 15,
-//     fontWeight: '500',
-//   },
-// });
-
-// export default SaveChatButton;
-
 import React, {useState} from 'react';
 import {
   View,
@@ -58,7 +30,7 @@ function SaveChatButton({onPress, allChats, setAllChats, chats, setChats}) {
       setChatTitle('');
       setModalVisible(false);
     } else {
-      // Optionally show an alert if the title is empty
+      // eslint-disable-next-line no-alert
       alert('Please enter a title for the chat.');
     }
   };
