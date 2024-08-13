@@ -1,87 +1,3 @@
-// import React from 'react';
-// import {
-//   View,
-//   Text,
-//   StyleSheet,
-//   ScrollView,
-//   TouchableOpacity,
-// } from 'react-native';
-// import {DrawerContentScrollView, DrawerItem} from '@react-navigation/drawer';
-
-// function CustomDrawerContent(props) {
-//   const allChats = props.allChats;
-//   const navigation = props.navigation;
-
-//   const handleChatGroupPress = chatGroup => {
-//     navigation.navigate('Chat', {chatGroup});
-//     // navigation.navigate('Main Chat', {chatGroup});
-//   };
-
-//   return (
-//     <View style={styles.drawerContainer}>
-//       <DrawerContentScrollView
-//         {...props}
-//         contentContainerStyle={styles.drawerContent}>
-//         <View style={styles.content}>
-//           <Text style={styles.title}>Saved Chats</Text>
-//           {allChats.length === 0 ? (
-//             <Text>No chats saved</Text>
-//           ) : (
-//             <ScrollView>
-//               {allChats.map((chatGroup, index) => (
-//                 <View key={index} style={styles.chatGroupItem}>
-//                   <TouchableOpacity
-//                     onPress={() => handleChatGroupPress(chatGroup)}>
-//                     <Text style={styles.chatGroupTitle}>
-//                       {index + 1}. {chatGroup.title}
-//                     </Text>
-//                   </TouchableOpacity>
-//                 </View>
-//               ))}
-//             </ScrollView>
-//           )}
-//         </View>
-//       </DrawerContentScrollView>
-//       <View style={styles.homeButtonContainer}>
-//         <DrawerItem label="Home" onPress={() => navigation.navigate('Home')} />
-//       </View>
-//     </View>
-//   );
-// }
-
-// const styles = StyleSheet.create({
-//   drawerContainer: {
-//     flex: 1,
-//     backgroundColor: '#ffe6cc',
-//   },
-//   drawerContent: {
-//     flex: 1,
-//     padding: 16,
-//     justifyContent: 'center',
-//   },
-//   content: {
-//     flex: 1,
-//   },
-//   title: {
-//     fontSize: 20,
-//     fontWeight: 'bold',
-//     marginBottom: 10,
-//   },
-//   chatGroupItem: {
-//     paddingVertical: 10,
-//   },
-//   chatGroupTitle: {
-//     fontSize: 16,
-//   },
-//   homeButtonContainer: {
-//     padding: 2,
-//     backgroundColor: '#ff9933',
-//     justifyContent: 'flex-end',
-//   },
-// });
-
-// export default CustomDrawerContent;
-
 import React from 'react';
 import {
   View,
@@ -90,7 +6,7 @@ import {
   ScrollView,
   TouchableOpacity,
 } from 'react-native';
-import {DrawerContentScrollView, DrawerItem} from '@react-navigation/drawer';
+import {DrawerContentScrollView} from '@react-navigation/drawer';
 
 function CustomDrawerContent(props) {
   const allChats = props.allChats;

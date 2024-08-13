@@ -82,7 +82,7 @@ function ChatScreen(props) {
     setAllChats(prevAllChats => [...prevAllChats, ...chats]);
     handleClearChats();
     // console.warn('Chats Saved');
-    Alert.alert('Chats Saved');
+    Alert.alert('Chat Saved');
   };
 
   return (
