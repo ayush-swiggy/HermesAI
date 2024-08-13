@@ -18,26 +18,12 @@ const DRAWER = createDrawerNavigator();
 
 function App(): React.JSX.Element {
   const [chat, setChat] = useState([]);
-  const [allChats, setAllChats] = useState([
-    // {
-    //   title: 'First Chat',
-    //   chats: [
-    //     {chat_id: 1, message: 'Hello'},
-    //     {chat_id: 2, message: 'Bye'},
-    //   ],
-    // },
-    // {
-    //   title: 'Second Chat',
-    //   chats: [
-    //     {chat_id: 1, message: 'Hello2'},
-    //     {chat_id: 2, message: 'Bye2'},
-    //   ],
-    // },
-  ]);
+  const [allChats, setAllChats] = useState([]);
 
   return (
     <NavigationContainer>
       <DRAWER.Navigator
+        // eslint-disable-next-line react/no-unstable-nested-components
         drawerContent={props => (
           <CustomDrawerContent {...props} chat={chat} allChats={allChats} />
         )}
