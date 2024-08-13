@@ -27,9 +27,12 @@ function App(): React.JSX.Element {
         drawerContent={props => (
           <CustomDrawerContent {...props} chat={chat} allChats={allChats} />
         )}
-        screenOptions={{headerShown: true}}>
+        screenOptions={{
+          headerShown: true,
+          drawerStyle: {backgroundColor: '#ff9933'},
+        }}>
         <DRAWER.Screen
-          name="Main Chat"
+          name="Home"
           children={props => (
             <ChatScreen
               {...props}
@@ -39,10 +42,20 @@ function App(): React.JSX.Element {
               allChats={allChats}
             />
           )}
+          options={{
+            headerStyle: {
+              backgroundColor: '#ff9933',
+            },
+          }}
         />
         <DRAWER.Screen
-          name="Individual Chat"
+          name="Chat"
           component={IndividualChatScreen}
+          options={{
+            headerStyle: {
+              backgroundColor: '#ff9933',
+            },
+          }}
         />
       </DRAWER.Navigator>
     </NavigationContainer>

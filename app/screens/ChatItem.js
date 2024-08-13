@@ -32,6 +32,7 @@ const styles = StyleSheet.create({
   textItem: {
     color: 'black',
     paddingRight: '12%',
+    fontSize: 18,
   },
 });
 

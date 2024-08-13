@@ -1,16 +1,3 @@
-// import React from 'react';
-// import {Text, View} from 'react-native';
-
-// function IndividualChatScreen(props) {
-//   return (
-//     <View>
-//       <Text>Individual Chat Screen</Text>
-//     </View>
-//   );
-// }
-
-// export default IndividualChatScreen;
-
 import React from 'react';
 import {View, Text, StyleSheet, ScrollView} from 'react-native';
 
@@ -35,9 +22,10 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 16,
+    backgroundColor: '#ffe6cc',
   },
   title: {
-    fontSize: 20,
+    fontSize: 24,
     fontWeight: 'bold',
     marginBottom: 10,
   },
@@ -45,7 +33,7 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   chatMessage: {
-    fontSize: 14,
+    fontSize: 18,
   },
 });
 

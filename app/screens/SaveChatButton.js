@@ -6,7 +6,7 @@ import {
   StyleSheet,
   Modal,
   TextInput,
-  Button,
+  Alert,
 } from 'react-native';
 
 function SaveChatButton({onPress, allChats, setAllChats, chats, setChats}) {
@@ -14,9 +14,8 @@ function SaveChatButton({onPress, allChats, setAllChats, chats, setChats}) {
   const [chatTitle, setChatTitle] = useState('');
 
   const handleSave = () => {
-    // Call the onPress function with the title
     if (chats.length === 0) {
-      console.warn(
+      Alert.alert(
         'No Chat to Save',
         'There are no chats to save. Please add some content first.',
       );
@@ -30,8 +29,7 @@ function SaveChatButton({onPress, allChats, setAllChats, chats, setChats}) {
       setChatTitle('');
       setModalVisible(false);
     } else {
-      // eslint-disable-next-line no-alert
-      alert('Please enter a title for the chat.');
+      Alert.alert('Error', 'Please enter a title for the chat.');
     }
   };
 
@@ -58,8 +56,14 @@ function SaveChatButton({onPress, allChats, setAllChats, chats, setChats}) {
               placeholder="Chat Title"
             />
             <View style={styles.modalButtons}>
-              <Button title="Cancel" onPress={() => setModalVisible(false)} />
-              <Button title="Save" onPress={handleSave} />
+              <TouchableOpacity
+                onPress={() => setModalVisible(false)}
+                style={styles.cancelButton}>
+                <Text style={styles.buttonText}>Cancel</Text>
+              </TouchableOpacity>
+              <TouchableOpacity onPress={handleSave} style={styles.saveButton}>
+                <Text style={styles.buttonText}>Save</Text>
+              </TouchableOpacity>
             </View>
           </View>
         </View>
@@ -80,17 +84,18 @@ const styles = StyleSheet.create({
   textStyle: {
     fontSize: 15,
     fontWeight: '500',
+    color: 'black',
   },
   modalContainer: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: 'rgba(0,0,0,0.5)', // semi-transparent background
+    backgroundColor: 'rgba(0, 0, 0, 0.5)', // semi-transparent background
   },
   modalContent: {
     width: 300,
     padding: 20,
-    backgroundColor: 'white',
+    backgroundColor: '#ffe6cc',
     borderRadius: 10,
     alignItems: 'center',
   },
@@ -103,6 +108,7 @@ const styles = StyleSheet.create({
     width: '100%',
     borderWidth: 1,
     borderColor: '#ccc',
+    backgroundColor: 'white',
     padding: 10,
     marginBottom: 20,
     borderRadius: 5,
@@ -111,6 +117,25 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     width: '100%',
+  },
+  cancelButton: {
+    flex: 1,
+    backgroundColor: '#ff9933',
+    padding: 10,
+    borderRadius: 5,
+    alignItems: 'center',
+    marginRight: 10,
+  },
+  saveButton: {
+    flex: 1,
+    backgroundColor: '#ff9933',
+    padding: 10,
+    borderRadius: 5,
+    alignItems: 'center',
+  },
+  buttonText: {
+    color: 'white',
+    fontWeight: 'bold',
   },
 });
 

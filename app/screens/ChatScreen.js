@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, StyleSheet} from 'react-native';
+import {View, StyleSheet, Alert} from 'react-native';
 import InputArea from './InputArea';
 import ConversationArea from './ConversationArea';
 
@@ -81,7 +81,8 @@ function ChatScreen(props) {
   const handleAllChats = () => {
     setAllChats(prevAllChats => [...prevAllChats, ...chats]);
     handleClearChats();
-    console.warn('Chats Saved');
+    // console.warn('Chats Saved');
+    Alert.alert('Chats Saved');
   };
 
   return (
