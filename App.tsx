@@ -25,7 +25,7 @@ function App(): React.JSX.Element {
       <DRAWER.Navigator
         // eslint-disable-next-line react/no-unstable-nested-components
         drawerContent={props => (
-          <CustomDrawerContent {...props} chat={chat} allChats={allChats} />
+          <CustomDrawerContent {...props} allChats={allChats} />
         )}
         screenOptions={{
           headerShown: true,

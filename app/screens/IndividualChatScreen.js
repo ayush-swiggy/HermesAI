@@ -1,11 +1,17 @@
 import React from 'react';
 import {View, Text, StyleSheet, ScrollView} from 'react-native';
+import {TouchableOpacity} from 'react-native-gesture-handler';
 
-function IndividualChatScreen({route}) {
+function IndividualChatScreen({route, navigation}) {
   const {chatGroup} = route.params;
 
   return (
     <View style={styles.container}>
+      <TouchableOpacity
+        style={styles.backToHome}
+        onPress={() => navigation.navigate('Home')}>
+        <Text> Back to Home</Text>
+      </TouchableOpacity>
       <Text style={styles.title}>{chatGroup.title}</Text>
       <ScrollView>
         {chatGroup.chats.map(chat => (
@@ -34,6 +40,15 @@ const styles = StyleSheet.create({
   },
   chatMessage: {
     fontSize: 18,
+  },
+  backToHome: {
+    width: '30%',
+    height: 25,
+    backgroundColor: '#ff9933',
+    borderRadius: 24,
+    justifyContent: 'center',
+    alignItems: 'center',
+    marginBottom: 10,
   },
 });
 
